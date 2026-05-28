@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -20,6 +20,12 @@ function NewsContent() {
     initialCategory && categories.includes(initialCategory) ? initialCategory : 'All'
   )
   const [searchQuery, setSearchQuery] = useState('')
+
+  useEffect(() => {
+    setActiveCategory(
+      initialCategory && categories.includes(initialCategory) ? initialCategory : 'All'
+    )
+  }, [initialCategory])
 
   const visibleArticles = newsArticles.filter(a => a.category !== 'announcement' && a.category !== 'dev-diary')
   const featuredArticle = visibleArticles.find(a => a.featured)
