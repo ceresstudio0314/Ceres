@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Gamepad2, Users, Newspaper, MessageSquare, HelpCircle, Globe, Zap, Star, ArrowRight, Menu, X } from 'lucide-react'
+import { ChevronDown, Gamepad2, Users, Newspaper, MessageSquare, HelpCircle, Globe, Zap, Star, ArrowRight, Menu, X, Mail } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { dropdownVariant } from '@/lib/animations'
 
@@ -75,6 +75,7 @@ const navItems = [
         title: 'Help',
         items: [
           { label: 'Contact Us', desc: 'Get in touch', href: '/contact', icon: MessageSquare },
+          { label: 'Email Support', desc: 'ayush@ceresstudio.in', href: 'mailto:ayush@ceresstudio.in', icon: Mail },
           { label: 'Press & Media', desc: 'Press kit & inquiries', href: '/contact#press', icon: Newspaper },
           { label: 'Help Center', desc: 'FAQs & troubleshooting', href: '#', icon: HelpCircle },
         ],

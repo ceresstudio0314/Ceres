@@ -12,7 +12,7 @@ const locations = [
     city: 'India',
     type: 'Studio HQ',
     address: 'Remote',
-    email: 'contact@ceres-studios.com',
+    email: 'ayush@ceresstudio.in',
   }
 ]
 
