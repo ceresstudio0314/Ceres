@@ -25,18 +25,18 @@ export function PartnerLogos() {
       </div>
 
       {/* Infinite Marquee */}
-      <div className="relative w-full flex overflow-x-hidden">
+      <div className="relative w-full h-10 overflow-hidden">
         {/* Gradient Fades */}
-        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-ceres-surface to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-ceres-surface to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-32 bg-gradient-to-r from-ceres-surface to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-32 bg-gradient-to-l from-ceres-surface to-transparent z-10 pointer-events-none" />
 
-        <div className="flex animate-marquee whitespace-nowrap items-center">
+        <div className="absolute left-0 top-1/2 flex -translate-y-1/2 animate-marquee whitespace-nowrap items-center">
           {[...tools, ...tools, ...tools].map((tool, index) => {
             const Icon = tool.icon
             return (
               <div
                 key={index}
-                className="mx-10 lg:mx-16 flex items-center gap-3 opacity-40 hover:opacity-100 transition-opacity duration-300"
+                className="mx-6 sm:mx-10 lg:mx-16 flex items-center gap-3 opacity-40 hover:opacity-100 transition-opacity duration-300"
               >
                 <Icon className="w-5 h-5 text-ceres-blue flex-shrink-0" />
                 <span className="font-display text-2xl text-white tracking-wider whitespace-nowrap">
