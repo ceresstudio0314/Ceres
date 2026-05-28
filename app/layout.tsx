@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { BackButton } from '@/components/layout/BackButton'
 import { CustomCursor } from '@/components/ui/CustomCursor'
 import { SmoothScroll } from '@/components/ui/SmoothScroll'
 import { LoadingScreen } from '@/components/ui/LoadingScreen'
@@ -71,6 +72,7 @@ export default function RootLayout({
           <LoadingScreen />
           <CustomCursor />
           <Navbar />
+          <BackButton />
           <main>{children}</main>
           <Footer />
         </SmoothScroll>
