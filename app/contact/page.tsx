@@ -17,7 +17,7 @@ const locations = [
 ]
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,29 +25,9 @@ export default function ContactPage() {
     message: '',
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = () => {
     setFormState('submitting')
-
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/ayush@ceresstudio.in', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          _subject: `New Ceres support request: ${formData.inquiryType}`,
-          _template: 'table',
-          name: formData.name,
-          email: formData.email,
-          inquiryType: formData.inquiryType,
-          message: formData.message,
-        }),
-      })
-
-      if (!response.ok) throw new Error('Message failed')
-
+    window.setTimeout(() => {
       setFormData({
         name: '',
         email: '',
@@ -55,9 +35,7 @@ export default function ContactPage() {
         message: '',
       })
       setFormState('success')
-    } catch {
-      setFormState('error')
-    }
+    }, 800)
   }
 
   return (
@@ -112,13 +90,24 @@ export default function ContactPage() {
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    action="https://formsubmit.co/ayush@ceresstudio.in"
+                    method="POST"
+                    target="support-form-frame"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="_subject" value={`New Ceres support request: ${formData.inquiryType || 'Support'}`} />
+                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="about:blank" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Name</label>
                         <input
                           required
                           type="text"
+                          name="name"
                           value={formData.name}
                           onChange={(event) => {
                             setFormData({ ...formData, name: event.target.value })
@@ -133,6 +122,7 @@ export default function ContactPage() {
                         <input
                           required
                           type="email"
+                          name="email"
                           value={formData.email}
                           onChange={(event) => {
                             setFormData({ ...formData, email: event.target.value })
@@ -148,6 +138,7 @@ export default function ContactPage() {
                       <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Inquiry Type</label>
                       <select
                         required
+                        name="inquiryType"
                         value={formData.inquiryType}
                         onChange={(event) => {
                           setFormData({ ...formData, inquiryType: event.target.value })
@@ -168,6 +159,7 @@ export default function ContactPage() {
                       <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Message</label>
                       <textarea
                         required
+                        name="message"
                         rows={6}
                         value={formData.message}
                         onChange={(event) => {
@@ -179,12 +171,6 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {formState === 'error' && (
-                      <p className="text-sm text-ceres-red font-mono">
-                        Message could not be sent. Please try again.
-                      </p>
-                    )}
-
                     <button 
                       type="submit" 
                       disabled={formState === 'submitting'}
@@ -194,6 +180,7 @@ export default function ContactPage() {
                     </button>
                   </form>
                 )}
+                <iframe name="support-form-frame" title="Support form submission" className="hidden" />
               </GlowCard>
             </ScrollReveal>
           </div>
