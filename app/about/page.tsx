@@ -74,6 +74,31 @@ export default function AboutPage() {
 
 
 
+      {/* Leadership */}
+      <section id="leadership" className="py-24 bg-ceres-black relative overflow-hidden mb-32">
+        <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-ceres-blue/30 to-transparent" />
+        <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ceres-blue/5 blur-[100px] pointer-events-none" />
+
+        <div className="container-narrow relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="section-label">Leadership</h2>
+              <h3 className="font-display text-4xl md:text-5xl text-white">Driven By Vision</h3>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="glass border border-ceres-border rounded-2xl p-8 md:p-12 text-left md:text-center">
+              <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
+                Ceres Studios is driven by a passion for immersive storytelling, unforgettable worlds, and cinematic gameplay. Built on creativity, ambition, and innovation, our vision is to create experiences that inspire players and leave a lasting impact beyond the screen.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+
+
       {/* Locations */}
       <section className="py-24 bg-ceres-black relative overflow-hidden" id="locations">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-full bg-ceres-blue/5 blur-[100px] pointer-events-none" />
