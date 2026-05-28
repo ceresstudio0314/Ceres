@@ -45,11 +45,28 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="text-center py-16">
+          <div className="mx-auto max-w-3xl py-8 text-left md:text-center">
             <ScrollReveal delay={0.1}>
-              <p className="text-xl text-text-muted">
-                [ Waiting for your custom story to be added here. Please share it in the chat! ]
-              </p>
+              <div className="space-y-6 text-lg md:text-xl text-text-secondary leading-relaxed">
+                <p>
+                  Ceres Studios was born from a vision beyond Earth.
+                </p>
+                <p>
+                  Inspired by the dwarf planet Ceres, a symbol of mystery, exploration, and the unknown, our studio was created to build worlds that players don't just play, but truly experience.
+                </p>
+                <p>
+                  What started as a dream driven by passion and imagination is evolving into a new force in interactive entertainment. We believe great games are built on immersive storytelling, meaningful exploration, cinematic worlds, and combat that feels powerful in every moment.
+                </p>
+                <p>
+                  At Ceres Studios, we are crafting experiences that spark emotion, inspire curiosity, and leave lasting memories long after the journey ends.
+                </p>
+                <p className="font-display text-3xl md:text-4xl text-white leading-none">
+                  We don't just make games.
+                </p>
+                <p className="font-display text-4xl md:text-5xl text-ceres-blue leading-none">
+                  We forge legends among the stars.
+                </p>
+              </div>
             </ScrollReveal>
           </div>
         </div>
