@@ -24,7 +24,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <SocialLink href="#" icon={Twitter} label="Twitter" />
-              <SocialLink href="#" icon={Instagram} label="Instagram" />
+              <SocialLink href="https://www.instagram.com/ceresstudio.in/" icon={Instagram} label="Instagram" />
             </div>
           </div>
 
