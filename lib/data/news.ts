@@ -85,6 +85,28 @@ The reveal is coming.`,
     gameRef: 'untitled-2d-game',
   },
   {
+    id: '4',
+    slug: 'latest-studio-updates',
+    title: 'Latest Studio Updates',
+    excerpt: 'Stay connected with the latest progress from Ceres Studios as new ideas, development milestones, and behind-the-scenes insights continue to take shape.',
+    content: `Stay connected with the latest progress from Ceres Studios.
+
+From game development milestones to behind-the-scenes insights, we share every step of our journey as we build immersive worlds and new interactive experiences.
+
+New ideas are always in motion.`,
+    category: 'update',
+    author: {
+      name: 'Ceres Studios',
+      role: 'Studio Founder',
+      avatar: '',
+    },
+    publishedAt: '2026-05-28',
+    readTime: 2,
+    coverImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop',
+    tags: ['Studio Update', 'Development', 'Behind the Scenes'],
+    featured: false,
+  },
+  {
     id: '3',
     slug: 'why-we-started-ceres-studios',
     title: 'Why We Started Ceres Studios',

@@ -47,7 +47,7 @@ const navItems = [
       {
         title: 'Latest',
         items: [
-          { label: 'Updates', desc: 'Patches & content drops', href: '/news?category=update', icon: Globe },
+          { label: 'Updates', desc: 'Latest studio progress', href: '/news?category=update', icon: Globe },
           { label: 'Community', desc: 'Fan spotlights & events', href: '/news?category=community', icon: Users },
         ],
       },

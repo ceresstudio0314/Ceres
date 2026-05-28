@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Clock, Search, ArrowRight } from 'lucide-react'
 import { newsArticles } from '@/lib/data/news'
@@ -12,8 +13,12 @@ import { staggerContainer, fadeUp } from '@/lib/animations'
 
 const categories = ['All', 'update', 'award', 'community']
 
-export default function NewsPage() {
-  const [activeCategory, setActiveCategory] = useState('All')
+function NewsContent() {
+  const searchParams = useSearchParams()
+  const initialCategory = searchParams.get('category')
+  const [activeCategory, setActiveCategory] = useState(
+    initialCategory && categories.includes(initialCategory) ? initialCategory : 'All'
+  )
   const [searchQuery, setSearchQuery] = useState('')
 
   const visibleArticles = newsArticles.filter(a => a.category !== 'announcement' && a.category !== 'dev-diary')
@@ -187,5 +192,13 @@ export default function NewsPage() {
 
       </div>
     </div>
+  )
+}
+
+export default function NewsPage() {
+  return (
+    <Suspense fallback={null}>
+      <NewsContent />
+    </Suspense>
   )
 }
