@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Gamepad2, Users, Newspaper, Briefcase, MessageSquare, HelpCircle, Globe, Trophy, Zap, Star, ArrowRight, Menu, X } from 'lucide-react'
+import { ChevronDown, Gamepad2, Users, Newspaper, MessageSquare, HelpCircle, Globe, Zap, Star, ArrowRight, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { dropdownVariant } from '@/lib/animations'
 
@@ -49,23 +49,6 @@ const navItems = [
         items: [
           { label: 'Updates', desc: 'Patches & content drops', href: '/news?category=update', icon: Globe },
           { label: 'Community', desc: 'Fan spotlights & events', href: '/news?category=community', icon: Users },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Careers',
-    href: '/careers',
-    icon: Briefcase,
-    sections: [
-      {
-        title: 'Join Us',
-        items: [
-          { label: 'Open Positions', desc: '15+ roles available', href: '/careers', icon: Briefcase },
-          { label: 'Engineering', desc: 'Build the future of gaming', href: '/careers?dept=Engineering', icon: Zap },
-          { label: 'Art & Design', desc: 'Create stunning worlds', href: '/careers?dept=Art+%26+Design', icon: Star },
-          { label: 'Narrative', desc: 'Tell legendary stories', href: '/careers?dept=Narrative', icon: Newspaper },
-          { label: 'Our Culture', desc: 'Life at Ceres', href: '/careers#culture', icon: Users },
         ],
       },
     ],
@@ -252,9 +235,6 @@ export function Navbar() {
           {/* Right actions */}
           <div className="hidden lg:flex items-center gap-3">
             <Link href="/news" className="btn-ghost text-sm">News</Link>
-            <Link href="/careers" className="btn-primary text-sm">
-              Join Us <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -318,9 +298,6 @@ export function Navbar() {
               </div>
 
               <div className="mt-8 flex flex-col gap-3">
-                <Link href="/careers" className="btn-primary justify-center">
-                  View Open Positions <ArrowRight className="w-4 h-4" />
-                </Link>
                 <Link href="/contact" className="btn-secondary justify-center">
                   Contact Us
                 </Link>
