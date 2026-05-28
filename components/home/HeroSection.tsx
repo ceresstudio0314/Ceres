@@ -8,6 +8,7 @@ import { MagneticButton } from '@/components/ui/MagneticButton'
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -34,7 +35,7 @@ export function HeroSection() {
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/hero-bg.png')`,
+            backgroundImage: `url('${basePath}/images/hero-bg.png')`,
           }}
         />
       </motion.div>
@@ -96,14 +97,14 @@ export function HeroSection() {
           >
             <MagneticButton
               className="btn-primary"
-              onClick={() => window.location.href = '/games'}
+              onClick={() => window.location.href = `${basePath}/games`}
             >
               Our Games <ArrowRight className="w-4 h-4" />
             </MagneticButton>
 
             <MagneticButton
               className="btn-secondary"
-              onClick={() => window.location.href = '/about'}
+              onClick={() => window.location.href = `${basePath}/about`}
             >
               About the Studio
             </MagneticButton>
