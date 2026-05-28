@@ -5,14 +5,22 @@ import { AnimatedText } from '@/components/ui/AnimatedText'
 import { ParallaxSection } from '@/components/ui/ParallaxSection'
 
 export function StudioIntro() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
   return (
-    <section className="py-24 md:py-32 bg-ceres-surface border-y border-ceres-border relative overflow-hidden">
-      <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none" />
+    <section className="py-24 md:py-32 bg-ceres-black border-y border-ceres-border relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-35"
+        style={{ backgroundImage: `url('${basePath}/images/hero-bg.png')` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-ceres-black via-ceres-black/75 to-ceres-black" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ceres-black/60 via-ceres-blue/10 to-ceres-black/60" />
+      <div className="absolute inset-0 bg-noise opacity-25 mix-blend-overlay pointer-events-none" />
       
       <div className="container-narrow text-center relative z-10">
         <ScrollReveal>
           <div className="w-16 h-16 mx-auto mb-8 rounded-2xl bg-gradient-to-br from-ceres-blue to-ceres-blue-dark p-[1px]">
-            <div className="w-full h-full bg-ceres-surface rounded-2xl flex items-center justify-center">
+            <div className="w-full h-full bg-ceres-black/80 rounded-2xl flex items-center justify-center backdrop-blur-sm">
               <span className="font-display text-2xl text-ceres-blue">CS</span>
             </div>
           </div>
