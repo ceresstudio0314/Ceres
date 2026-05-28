@@ -76,7 +76,6 @@ const navItems = [
         items: [
           { label: 'Contact Us', desc: 'Get in touch', href: '/contact', icon: MessageSquare },
           { label: 'Email Support', desc: 'ayush@ceresstudio.in', href: 'mailto:ayush@ceresstudio.in', icon: Mail },
-          { label: 'Press & Media', desc: 'Press kit & inquiries', href: '/contact#press', icon: Newspaper },
           { label: 'Help Center', desc: 'FAQs & troubleshooting', href: '#', icon: HelpCircle },
         ],
       },
