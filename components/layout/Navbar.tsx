@@ -232,10 +232,8 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Right actions */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link href="/news" className="btn-ghost text-sm">News</Link>
-          </div>
+          {/* Right spacer keeps the desktop nav visually centered. */}
+          <div className="hidden lg:block w-20" />
 
           {/* Mobile Toggle */}
           <button
