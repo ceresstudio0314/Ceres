@@ -113,6 +113,19 @@ export function Navbar() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setActiveMenu(null), 150)
   }
+  const handleLinkClick = (href: string, event?: React.MouseEvent<HTMLAnchorElement>) => {
+    setActiveMenu(null)
+    setMobileOpen(false)
+
+    const [path, hash] = href.split('#')
+    if (!hash || path !== pathname) return
+
+    event?.preventDefault()
+    window.history.pushState(null, '', href)
+    window.setTimeout(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 0)
+  }
 
   return (
     <>
@@ -179,6 +192,7 @@ export function Navbar() {
                                       <Link
                                         href={link.href}
                                         className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 group/link transition-all duration-200"
+                                        onClick={(event) => handleLinkClick(link.href, event)}
                                       >
                                         <div className="mt-0.5 w-8 h-8 rounded-lg bg-ceres-surface border border-ceres-border group-hover/link:border-ceres-blue/30 group-hover/link:bg-ceres-blue/5 flex items-center justify-center flex-shrink-0 transition-all duration-200">
                                           <link.icon className="w-4 h-4 text-text-muted group-hover/link:text-ceres-blue transition-colors" />
@@ -285,7 +299,7 @@ export function Navbar() {
                           key={link.label}
                           href={link.href}
                           className="text-sm text-text-secondary hover:text-white py-1 transition-colors"
-                          onClick={() => setMobileOpen(false)}
+                          onClick={(event) => handleLinkClick(link.href, event)}
                         >
                           {link.label}
                         </Link>

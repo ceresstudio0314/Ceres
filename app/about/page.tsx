@@ -75,7 +75,7 @@ export default function AboutPage() {
 
 
       {/* Leadership */}
-      <section id="leadership" className="py-24 bg-ceres-black relative overflow-hidden mb-32">
+      <section id="leadership" className="py-24 bg-ceres-black relative overflow-hidden mb-32 scroll-mt-32">
         <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-ceres-blue/30 to-transparent" />
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ceres-blue/5 blur-[100px] pointer-events-none" />
 
