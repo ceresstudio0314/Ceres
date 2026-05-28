@@ -1,6 +1,7 @@
 'use client'
 
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { NewsletterForm } from '@/components/ui/NewsletterForm'
 
 export function NewsletterSection() {
   return (
@@ -17,20 +18,7 @@ export function NewsletterSection() {
             Get exclusive developer updates, early access to closed betas, and invitations to global community events.
           </p>
 
-          <form 
-            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 bg-ceres-surface border border-ceres-border rounded-xl px-6 py-4 text-white placeholder:text-text-muted focus:outline-none focus:border-ceres-blue focus:ring-1 focus:ring-ceres-blue transition-all"
-              required
-            />
-            <button type="submit" className="btn-primary py-4 px-8">
-              Subscribe
-            </button>
-          </form>
+          <NewsletterForm />
           
           <p className="text-xs text-text-muted mt-6 font-mono">
             By subscribing, you agree to our Privacy Policy. You can unsubscribe at any time.

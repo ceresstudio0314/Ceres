@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { Twitter, Instagram, Youtube, Linkedin, Github, Twitch, Mail, MapPin } from 'lucide-react'
+import { NewsletterForm } from '@/components/ui/NewsletterForm'
 
 export function Footer() {
   return (
@@ -51,17 +52,7 @@ export function Footer() {
             <p className="text-text-secondary text-sm mb-4">
               Get exclusive development updates, early access to betas, and community event invites.
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 mb-8" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-ceres-surface border border-ceres-border rounded-lg px-4 py-3 text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-ceres-blue focus:ring-1 focus:ring-ceres-blue transition-all"
-                required
-              />
-              <button type="submit" className="btn-primary py-3">
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm compact />
 
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 text-sm text-text-secondary">
