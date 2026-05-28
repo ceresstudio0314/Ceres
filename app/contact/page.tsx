@@ -17,13 +17,47 @@ const locations = [
 ]
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle')
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    inquiryType: '',
+    message: '',
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState('submitting')
-    // Simulate API call
-    setTimeout(() => setFormState('success'), 1500)
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ayush@ceresstudio.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New Ceres support request: ${formData.inquiryType}`,
+          _template: 'table',
+          name: formData.name,
+          email: formData.email,
+          inquiryType: formData.inquiryType,
+          message: formData.message,
+        }),
+      })
+
+      if (!response.ok) throw new Error('Message failed')
+
+      setFormData({
+        name: '',
+        email: '',
+        inquiryType: '',
+        message: '',
+      })
+      setFormState('success')
+    } catch {
+      setFormState('error')
+    }
   }
 
   return (
@@ -69,7 +103,7 @@ export default function ContactPage() {
                       <Send className="w-6 h-6 text-emerald-400" />
                     </div>
                     <h4 className="font-display text-2xl text-white mb-2">Message Received</h4>
-                    <p className="text-text-secondary">Our team will respond to your transmission shortly.</p>
+                    <p className="text-text-secondary">Your message has been sent to Ceres Studios.</p>
                     <button 
                       onClick={() => setFormState('idle')}
                       className="mt-8 text-ceres-blue text-sm font-semibold hover:text-white transition-colors"
@@ -82,17 +116,45 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Name</label>
-                        <input required type="text" className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors" placeholder="Commander Shepard" />
+                        <input
+                          required
+                          type="text"
+                          value={formData.name}
+                          onChange={(event) => {
+                            setFormData({ ...formData, name: event.target.value })
+                            if (formState !== 'idle') setFormState('idle')
+                          }}
+                          className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors"
+                          placeholder="Your name"
+                        />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Email</label>
-                        <input required type="email" className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors" placeholder="shepard@normandy.sr2" />
+                        <input
+                          required
+                          type="email"
+                          value={formData.email}
+                          onChange={(event) => {
+                            setFormData({ ...formData, email: event.target.value })
+                            if (formState !== 'idle') setFormState('idle')
+                          }}
+                          className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors"
+                          placeholder="you@example.com"
+                        />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Inquiry Type</label>
-                      <select required className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors appearance-none">
+                      <select
+                        required
+                        value={formData.inquiryType}
+                        onChange={(event) => {
+                          setFormData({ ...formData, inquiryType: event.target.value })
+                          if (formState !== 'idle') setFormState('idle')
+                        }}
+                        className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors appearance-none"
+                      >
                         <option value="">Select an option...</option>
                         <option value="support">Player Support</option>
                         <option value="press">Press / Media</option>
@@ -104,8 +166,24 @@ export default function ContactPage() {
 
                     <div className="space-y-2">
                       <label className="text-xs font-mono text-text-muted uppercase tracking-wider">Message</label>
-                      <textarea required rows={6} className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors resize-none" placeholder="Enter your transmission here..."></textarea>
+                      <textarea
+                        required
+                        rows={6}
+                        value={formData.message}
+                        onChange={(event) => {
+                          setFormData({ ...formData, message: event.target.value })
+                          if (formState !== 'idle') setFormState('idle')
+                        }}
+                        className="w-full bg-ceres-black border border-ceres-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ceres-blue transition-colors resize-none"
+                        placeholder="Enter your support message here..."
+                      />
                     </div>
+
+                    {formState === 'error' && (
+                      <p className="text-sm text-ceres-red font-mono">
+                        Message could not be sent. Please try again.
+                      </p>
+                    )}
 
                     <button 
                       type="submit" 
