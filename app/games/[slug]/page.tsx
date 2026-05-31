@@ -23,7 +23,7 @@ export default async function GameDetailPage(props: { params: Promise<{ slug: st
   return (
     <div className="min-h-screen bg-ceres-black">
       {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[600px] w-full flex items-end pb-24">
+      <section className="relative min-h-[560px] md:h-[80vh] md:min-h-[600px] w-full flex items-end pb-16 md:pb-24 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${game.heroImage || 'https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=3000&auto=format&fit=crop'}')` }}
@@ -58,15 +58,15 @@ export default async function GameDetailPage(props: { params: Promise<{ slug: st
               className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-4 drop-shadow-2xl"
             />
             
-            <p className="text-xl md:text-2xl text-ceres-blue font-medium mb-8 max-w-2xl">
+            <p className="text-base md:text-2xl text-ceres-blue font-medium mb-8 max-w-2xl">
               {game.tagline}
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <MagneticButton className="btn-primary">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
+              <MagneticButton className="btn-primary justify-center">
                 Buy Now
               </MagneticButton>
-              <MagneticButton className="btn-secondary">
+              <MagneticButton className="btn-secondary justify-center">
                 <Play className="w-4 h-4 fill-current" /> Watch Trailer
               </MagneticButton>
             </div>
@@ -76,8 +76,8 @@ export default async function GameDetailPage(props: { params: Promise<{ slug: st
 
       {/* Meta Bar */}
       <div className="border-y border-ceres-border bg-ceres-surface/50 backdrop-blur-md sticky top-[72px] z-40">
-        <div className="container-wide py-4 flex flex-wrap gap-8 items-center justify-between">
-          <div className="flex items-center gap-8">
+        <div className="container-wide py-4 flex flex-wrap gap-5 md:gap-8 items-center justify-between">
+          <div className="flex flex-col xs:flex-row xs:items-center gap-5 md:gap-8">
             <div className="flex items-center gap-3">
               <Calendar className="w-5 h-5 text-text-muted" />
               <div>
@@ -109,8 +109,8 @@ export default async function GameDetailPage(props: { params: Promise<{ slug: st
       </div>
 
       {/* Main Content */}
-      <section className="py-24 container-wide">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <section className="py-16 md:py-24 container-wide">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-8">
             <h2 className="font-display text-4xl text-white mb-8">About The Game</h2>
             <div className="prose prose-invert prose-lg max-w-none prose-p:text-text-secondary prose-p:leading-relaxed">
@@ -139,7 +139,7 @@ export default async function GameDetailPage(props: { params: Promise<{ slug: st
           </div>
 
           <div className="lg:col-span-4">
-            <div className="glass rounded-2xl p-8 sticky top-40 border-white/5">
+            <div className="glass rounded-2xl p-5 sm:p-8 sticky top-40 border-white/5">
               <h3 className="font-mono text-sm uppercase tracking-widest text-text-muted mb-6">Game Info</h3>
               
               <div className="space-y-6">

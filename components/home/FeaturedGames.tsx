@@ -11,14 +11,14 @@ export function FeaturedGames() {
   if (!game) return null
 
   return (
-    <section className="py-24 md:py-32 bg-ceres-black relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-ceres-black relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-ceres-blue/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-ceres-gold/3 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 h-72 md:w-[600px] md:h-[600px] bg-ceres-blue/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-60 h-60 md:w-96 md:h-96 bg-ceres-gold/3 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container-wide">
         <ScrollReveal>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10 md:mb-14">
             <div>
               <h2 className="section-label">Our Worlds</h2>
               <h3 className="font-display text-4xl md:text-5xl lg:text-6xl text-white">Featured Games</h3>
@@ -37,15 +37,15 @@ export function FeaturedGames() {
             className="relative rounded-3xl overflow-hidden border border-ceres-border bg-ceres-surface group max-w-5xl mx-auto"
           >
             {/* Top "coming soon" banner */}
-            <div className="absolute top-0 left-0 right-0 z-30 flex items-center justify-center py-3 bg-gradient-to-r from-ceres-blue/20 via-ceres-blue/30 to-ceres-blue/20 border-b border-ceres-blue/30 backdrop-blur-sm">
-              <span className="flex items-center gap-2 text-ceres-blue font-mono text-xs font-bold uppercase tracking-[0.2em]">
+            <div className="absolute top-0 left-0 right-0 z-30 flex items-center justify-center px-4 py-3 bg-gradient-to-r from-ceres-blue/20 via-ceres-blue/30 to-ceres-blue/20 border-b border-ceres-blue/30 backdrop-blur-sm">
+              <span className="flex items-center gap-2 text-center text-ceres-blue font-mono text-[10px] sm:text-xs font-bold uppercase tracking-[0.12em] sm:tracking-[0.2em]">
                 <span className="w-1.5 h-1.5 rounded-full bg-ceres-blue animate-pulse" />
                 Currently In Development
                 <span className="w-1.5 h-1.5 rounded-full bg-ceres-blue animate-pulse" />
               </span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[480px]">
               {/* Left: Visual panel */}
               <div className="relative overflow-hidden bg-gradient-to-br from-ceres-blue/10 via-ceres-black to-ceres-black min-h-[300px] lg:min-h-auto flex items-center justify-center">
                 {/* Animated grid pattern */}
@@ -74,9 +74,9 @@ export function FeaturedGames() {
               </div>
 
               {/* Right: Info panel */}
-              <div className="p-8 md:p-12 lg:pt-20 flex flex-col justify-center">
+              <div className="p-5 pt-8 sm:p-8 md:p-12 lg:pt-20 flex flex-col justify-center">
                 {/* Status badge */}
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
                   <span className="px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest rounded-full border bg-ceres-gold/10 text-ceres-gold border-ceres-gold/30">
                     Upcoming
                   </span>
@@ -104,7 +104,7 @@ export function FeaturedGames() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-6 border-t border-ceres-border">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-6 border-t border-ceres-border">
                   <div className="flex items-center gap-2 text-xs text-text-muted font-mono">
                     <Clock className="w-3.5 h-3.5" />
                     <span>Release Date: TBA</span>

@@ -11,10 +11,10 @@ import { ParallaxSection } from '@/components/ui/ParallaxSection'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-ceres-black pt-32 pb-24">
+    <div className="min-h-screen bg-ceres-black pt-28 md:pt-32 pb-16 md:pb-24">
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center text-center px-4 overflow-hidden mb-24">
+      <section className="relative min-h-[460px] md:h-[60vh] md:min-h-[500px] flex items-center justify-center text-center px-4 overflow-hidden mb-16 md:mb-24">
         <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay z-10" />
         <ParallaxSection offset={100} speed={0.3} className="absolute inset-0">
            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1614294149010-950b698f72c0?q=80&w=2500&auto=format&fit=crop')] bg-cover bg-center opacity-30" />
@@ -26,7 +26,7 @@ export default function AboutPage() {
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6 drop-shadow-2xl">
               FORGED IN <span className="text-ceres-blue">DARKNESS</span>
             </h1>
-            <p className="text-xl md:text-2xl text-text-secondary font-medium">
+            <p className="text-base md:text-2xl text-text-secondary font-medium leading-relaxed">
               We are a collective of dreamers, builders, and storytellers redefining the boundaries of interactive entertainment.
             </p>
           </ScrollReveal>
@@ -36,10 +36,10 @@ export default function AboutPage() {
 
 
       {/* History Timeline */}
-      <section className="py-24 bg-ceres-surface border-y border-ceres-border relative overflow-hidden mb-32">
+      <section className="py-16 md:py-24 bg-ceres-surface border-y border-ceres-border relative overflow-hidden mb-20 md:mb-32">
         <div className="container-narrow relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-20">
+            <div className="text-center mb-12 md:mb-20">
               <h2 className="section-label">Our Story</h2>
               <h3 className="font-display text-4xl md:text-5xl text-white">Your Story</h3>
             </div>
@@ -47,7 +47,7 @@ export default function AboutPage() {
 
           <div className="mx-auto max-w-3xl py-8 text-left md:text-center">
             <ScrollReveal delay={0.1}>
-              <div className="space-y-6 text-lg md:text-xl text-text-secondary leading-relaxed">
+              <div className="space-y-6 text-base md:text-xl text-text-secondary leading-relaxed">
                 <p>
                   Ceres Studios was born from a vision beyond Earth.
                 </p>
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
 
       {/* Leadership */}
-      <section id="leadership" className="py-24 bg-ceres-black relative overflow-hidden mb-32 scroll-mt-32">
+      <section id="leadership" className="py-16 md:py-24 bg-ceres-black relative overflow-hidden mb-20 md:mb-32 scroll-mt-32">
         <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-ceres-blue/30 to-transparent" />
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ceres-blue/5 blur-[100px] pointer-events-none" />
 
@@ -88,8 +88,8 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="glass border border-ceres-border rounded-2xl p-8 md:p-12 text-left md:text-center">
-              <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
+            <div className="glass border border-ceres-border rounded-2xl p-5 sm:p-8 md:p-12 text-left md:text-center">
+              <p className="text-base md:text-xl text-text-secondary leading-relaxed">
                 Ceres Studios is driven by a passion for immersive storytelling, unforgettable worlds, and cinematic gameplay. Built on creativity, ambition, and innovation, our vision is to create experiences that inspire players and leave a lasting impact beyond the screen.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
 
       {/* Locations */}
-      <section className="py-24 bg-ceres-black relative overflow-hidden" id="locations">
+      <section className="py-16 md:py-24 bg-ceres-black relative overflow-hidden" id="locations">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-full bg-ceres-blue/5 blur-[100px] pointer-events-none" />
         
         <div className="container-wide relative z-10">

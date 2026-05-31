@@ -6,13 +6,13 @@ import { NewsletterForm } from '@/components/ui/NewsletterForm'
 
 export function Footer() {
   return (
-    <footer className="relative bg-ceres-black overflow-hidden pt-24 pb-12 border-t border-ceres-border">
+    <footer className="relative bg-ceres-black overflow-hidden pt-16 md:pt-24 pb-10 md:pb-12 border-t border-ceres-border">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-ceres-blue/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 md:w-[800px] h-[300px] md:h-[400px] bg-ceres-blue/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container-wide relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14 md:mb-20">
           
           {/* Brand Col */}
           <div className="lg:col-span-4 flex flex-col items-start">
@@ -66,11 +66,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-ceres-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-text-muted font-mono">
+        <div className="pt-8 border-t border-ceres-border flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-xs text-text-muted font-mono leading-relaxed">
             &copy; {new Date().getFullYear()} Ceres Studios LLC. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-xs font-mono text-text-muted">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-mono text-text-muted">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>

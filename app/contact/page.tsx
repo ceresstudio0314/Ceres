@@ -39,7 +39,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-ceres-black pt-32 pb-24 relative overflow-hidden">
+    <div className="min-h-screen bg-ceres-black pt-28 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
       {/* Background Graphic */}
       <div className="absolute top-0 right-0 w-full h-[600px] pointer-events-none opacity-20">
         <ParallaxSection offset={50} direction="down">
@@ -50,11 +50,11 @@ export default function ContactPage() {
       <div className="container-wide relative z-10">
         {/* Header */}
         <ScrollReveal>
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-12 md:mb-20">
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6">
               ESTABLISH <span className="text-ceres-blue">CONTACT</span>
             </h1>
-            <p className="text-xl text-text-secondary font-medium leading-relaxed">
+            <p className="text-base md:text-xl text-text-secondary font-medium leading-relaxed">
               Whether you're a player needing support, a creator looking to partner, or press seeking intelligence — we're listening.
             </p>
           </div>
@@ -65,8 +65,8 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="lg:col-span-7">
             <ScrollReveal delay={0.1}>
-              <GlowCard className="p-8 md:p-12">
-                <h3 className="font-display text-3xl text-white mb-8 flex items-center gap-3">
+              <GlowCard className="p-5 sm:p-8 md:p-12">
+                <h3 className="font-display text-2xl sm:text-3xl text-white mb-8 flex items-center gap-3">
                   <MessageSquare className="w-6 h-6 text-ceres-blue" />
                   Send a Message
                 </h3>

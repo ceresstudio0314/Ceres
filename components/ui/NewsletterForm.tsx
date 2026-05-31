@@ -55,8 +55,8 @@ export function NewsletterForm({ compact = false }: NewsletterFormProps) {
           placeholder={compact ? 'Enter your email' : 'Enter your email address'}
           className={
             compact
-              ? 'flex-1 bg-ceres-surface border border-ceres-border rounded-lg px-4 py-3 text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-ceres-blue focus:ring-1 focus:ring-ceres-blue transition-all'
-              : 'flex-1 bg-ceres-surface border border-ceres-border rounded-xl px-6 py-4 text-white placeholder:text-text-muted focus:outline-none focus:border-ceres-blue focus:ring-1 focus:ring-ceres-blue transition-all'
+              ? 'min-w-0 flex-1 bg-ceres-surface border border-ceres-border rounded-lg px-4 py-3 text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-ceres-blue focus:ring-1 focus:ring-ceres-blue transition-all'
+              : 'min-w-0 flex-1 bg-ceres-surface border border-ceres-border rounded-xl px-5 sm:px-6 py-4 text-white placeholder:text-text-muted focus:outline-none focus:border-ceres-blue focus:ring-1 focus:ring-ceres-blue transition-all'
           }
           required
         />

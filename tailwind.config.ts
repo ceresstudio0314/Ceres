@@ -37,8 +37,8 @@ const config: Config = {
         mono: ['var(--font-space-grotesk)', 'monospace'],
       },
       fontSize: {
-        'hero':  ['clamp(3rem, 8vw, 8rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
-        'display': ['clamp(2rem, 5vw, 5rem)', { lineHeight: '1', letterSpacing: '-0.01em' }],
+        'hero':  ['clamp(3rem, 16vw, 8rem)', { lineHeight: '0.95', letterSpacing: '0' }],
+        'display': ['clamp(2rem, 10vw, 5rem)', { lineHeight: '1', letterSpacing: '0' }],
         'title': ['clamp(1.5rem, 3vw, 3rem)', { lineHeight: '1.1' }],
       },
       spacing: {

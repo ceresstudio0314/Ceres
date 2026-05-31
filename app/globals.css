@@ -36,7 +36,7 @@ html {
   text-rendering: optimizeLegibility;
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
@@ -45,8 +45,22 @@ body {
   font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
   min-height: 100vh;
+}
+
+body,
+main,
+section,
+div {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 /* ─── Selection ─────────────────────────────────────────────────────────── */
@@ -75,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-bebas), 'Impact', sans-serif;
   letter-spacing: 0.02em;
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 /* ─── Focus Ring ────────────────────────────────────────────────────────── */
@@ -107,10 +122,10 @@ html.lenis {
 
   /* Section spacing */
   .section-padding {
-    @apply py-20 md:py-28 lg:py-36;
+    @apply py-16 md:py-28 lg:py-36;
   }
   .section-padding-sm {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-10 md:py-16 lg:py-20;
   }
 
   /* Glass morphism */
@@ -145,16 +160,16 @@ html.lenis {
 
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-ceres-blue text-white font-sans font-semibold text-sm tracking-wide rounded-lg transition-all duration-300 hover:bg-ceres-blue-glow hover:shadow-blue-glow hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-ceres-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ceres-black;
+    @apply inline-flex items-center gap-2 px-5 sm:px-7 py-3.5 bg-ceres-blue text-white font-sans font-semibold text-sm tracking-wide rounded-lg transition-all duration-300 hover:bg-ceres-blue-glow hover:shadow-blue-glow hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-ceres-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ceres-black;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-transparent border border-white/20 text-white font-sans font-semibold text-sm tracking-wide rounded-lg transition-all duration-300 hover:border-ceres-blue/60 hover:text-ceres-blue hover:bg-ceres-blue/5 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 px-5 sm:px-7 py-3.5 bg-transparent border border-white/20 text-white font-sans font-semibold text-sm tracking-wide rounded-lg transition-all duration-300 hover:border-ceres-blue/60 hover:text-ceres-blue hover:bg-ceres-blue/5 hover:-translate-y-0.5 active:translate-y-0;
   }
   .btn-ghost {
     @apply inline-flex items-center gap-2 px-5 py-2.5 text-text-secondary font-sans font-medium text-sm transition-colors duration-200 hover:text-white rounded-lg hover:bg-white/5;
   }
   .btn-gold {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-ceres-gold text-ceres-black font-sans font-bold text-sm tracking-wide rounded-lg transition-all duration-300 hover:bg-ceres-gold-light hover:shadow-gold-glow hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 px-5 sm:px-7 py-3.5 bg-ceres-gold text-ceres-black font-sans font-bold text-sm tracking-wide rounded-lg transition-all duration-300 hover:bg-ceres-gold-light hover:shadow-gold-glow hover:-translate-y-0.5;
   }
 
   /* Cards */
@@ -167,7 +182,7 @@ html.lenis {
 
   /* Section label */
   .section-label {
-    @apply inline-flex items-center gap-2 text-xs font-mono font-semibold text-ceres-blue uppercase tracking-[0.2em] mb-4;
+    @apply inline-flex items-center gap-2 text-xs font-mono font-semibold text-ceres-blue uppercase tracking-[0.12em] sm:tracking-[0.2em] mb-4;
   }
 
   /* Noise overlay */

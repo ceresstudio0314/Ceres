@@ -17,15 +17,15 @@ export default function CareersPage() {
     : jobPostings
 
   return (
-    <div className="min-h-screen bg-ceres-black pt-32 pb-24">
+    <div className="min-h-screen bg-ceres-black pt-28 md:pt-32 pb-16 md:pb-24">
       {/* Hero */}
-      <section className="relative container-wide mb-24">
+      <section className="relative container-wide mb-16 md:mb-24">
         <ScrollReveal>
           <div className="max-w-4xl">
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6">
               FORGE <span className="text-ceres-blue">LEGENDS</span>
             </h1>
-            <p className="text-xl text-text-secondary font-medium leading-relaxed max-w-2xl mb-8">
+            <p className="text-base md:text-xl text-text-secondary font-medium leading-relaxed max-w-2xl mb-8">
               Join a collective of world-class artists, engineers, and storytellers building the next generation of interactive entertainment. 
             </p>
             <div className="flex flex-wrap gap-4">
@@ -41,10 +41,10 @@ export default function CareersPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 bg-ceres-surface border-y border-ceres-border mb-24">
+      <section className="py-16 md:py-24 bg-ceres-surface border-y border-ceres-border mb-16 md:mb-24">
         <div className="container-wide">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
               <h2 className="section-label">Life at Ceres</h2>
               <h3 className="font-display text-4xl md:text-5xl text-white">We Take Care of Our Own</h3>
             </div>
@@ -125,7 +125,7 @@ export default function CareersPage() {
                         <GlowCard className="p-6 transition-all duration-300 group-hover:border-ceres-blue/50">
                           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <div>
-                              <div className="flex items-center gap-3 mb-2">
+                              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
                                 <span className="text-[10px] font-mono font-bold text-ceres-blue uppercase tracking-widest px-2 py-1 bg-ceres-blue/10 rounded">
                                   {job.department}
                                 </span>
@@ -138,7 +138,7 @@ export default function CareersPage() {
                               <h4 className="font-display text-2xl text-white mb-2 group-hover:text-ceres-blue transition-colors">
                                 {job.title}
                               </h4>
-                              <div className="flex flex-wrap items-center gap-4 text-xs text-text-muted font-mono">
+                              <div className="flex flex-col xs:flex-row xs:flex-wrap xs:items-center gap-2 xs:gap-4 text-xs text-text-muted font-mono">
                                 <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> {job.location}</span>
                                 <span className="flex items-center gap-1.5"><Briefcase className="w-3.5 h-3.5" /> {job.type} • {job.remote}</span>
                               </div>

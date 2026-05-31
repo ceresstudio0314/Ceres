@@ -8,7 +8,7 @@ export function StudioIntro() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
   return (
-    <section className="py-24 md:py-32 bg-ceres-black border-y border-ceres-border relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-ceres-black border-y border-ceres-border relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-35"
         style={{ backgroundImage: `url('${basePath}/images/hero-bg.png')` }}
@@ -29,11 +29,11 @@ export function StudioIntro() {
         <AnimatedText
           el="h2"
           text="WE DON'T JUST MAKE GAMES. WE FORGE LEGENDS."
-          className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-8"
+          className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8"
         />
 
         <ScrollReveal delay={0.2}>
-          <p className="text-lg md:text-xl text-text-secondary font-medium leading-relaxed mb-12">
+          <p className="text-base md:text-xl text-text-secondary font-medium leading-relaxed mb-10 md:mb-12">
             Founded in 2026, Ceres Studios was born from a passion for creating unforgettable gaming experiences. What started as an ambitious indie vision is evolving into a bold force in interactive entertainment. We believe in the power of immersive storytelling, the excitement of perfectly crafted combat, and the wonder of exploring worlds that feel truly alive.
           </p>
         </ScrollReveal>

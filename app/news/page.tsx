@@ -40,15 +40,15 @@ function NewsContent() {
 
   return (
     <div className="min-h-screen bg-ceres-black pt-32 pb-24 relative">
-      <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-ceres-blue/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 md:w-[800px] h-[420px] md:h-[600px] bg-ceres-blue/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container-wide relative z-10">
         <ScrollReveal>
-          <div className="mb-16">
+          <div className="mb-12 md:mb-16">
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6">
               STUDIO <span className="text-ceres-blue">TRANSMISSIONS</span>
             </h1>
-            <p className="text-xl text-text-secondary font-medium max-w-2xl">
+            <p className="text-base md:text-xl text-text-secondary font-medium max-w-2xl">
               The latest intelligence, development updates, and community highlights from Ceres Studios.
             </p>
           </div>
@@ -68,8 +68,8 @@ function NewsContent() {
                     <div className="absolute inset-0 bg-gradient-to-t from-ceres-surface lg:from-transparent lg:bg-gradient-to-r via-ceres-surface/20 to-transparent" />
                   </div>
                   
-                  <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                    <div className="flex items-center gap-3 mb-6">
+                  <div className="p-5 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                    <div className="flex flex-wrap items-center gap-3 mb-6">
                       <span className="px-3 py-1 bg-ceres-blue/10 border border-ceres-blue/30 rounded-full text-xs font-mono font-bold text-ceres-blue uppercase tracking-wider">
                         Featured
                       </span>
@@ -85,7 +85,7 @@ function NewsContent() {
                       {featuredArticle.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between mt-auto pt-8 border-t border-ceres-border">
+                    <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-4 mt-auto pt-8 border-t border-ceres-border">
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-ceres-border overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${featuredArticle.author.avatar})`}} />
                         <div>

@@ -20,7 +20,7 @@ export function HeroSection() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
 
   return (
-    <section ref={containerRef} className="relative h-screen min-h-[700px] w-full overflow-hidden bg-ceres-black">
+    <section ref={containerRef} className="relative min-h-[100svh] md:h-screen md:min-h-[700px] w-full overflow-hidden bg-ceres-black">
       {/* Background with Parallax */}
       <motion.div
         style={{ y, scale }}
@@ -67,17 +67,17 @@ export function HeroSection() {
       {/* Content */}
       <motion.div
         style={{ opacity }}
-        className="relative z-20 h-full container-wide flex flex-col justify-end pb-24 md:pb-32"
+        className="relative z-20 min-h-[100svh] md:h-full container-wide flex flex-col justify-end pb-16 pt-28 md:pb-32"
       >
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="flex items-center gap-4 mb-6"
+            className="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-6"
           >
-            <span className="h-px w-12 bg-ceres-blue" />
-            <span className="font-mono text-sm tracking-[0.2em] text-ceres-blue uppercase font-semibold flex items-center gap-2">
+            <span className="h-px w-8 sm:w-12 bg-ceres-blue" />
+            <span className="font-mono text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.2em] text-ceres-blue uppercase font-semibold flex items-center gap-2">
               <Gamepad2 className="w-3.5 h-3.5" />
               Ceres Studios — Founded 2026
             </span>
@@ -93,17 +93,17 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-col xs:flex-row items-stretch xs:items-center gap-3 sm:gap-4"
           >
             <MagneticButton
-              className="btn-primary"
+              className="btn-primary justify-center"
               onClick={() => window.location.href = `${basePath}/games`}
             >
               Our Games <ArrowRight className="w-4 h-4" />
             </MagneticButton>
 
             <MagneticButton
-              className="btn-secondary"
+              className="btn-secondary justify-center"
               onClick={() => window.location.href = `${basePath}/about`}
             >
               About the Studio

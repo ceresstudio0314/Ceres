@@ -19,7 +19,7 @@ export default async function ArticlePage(props: { params: Promise<{ slug: strin
   }
 
   return (
-    <div className="min-h-screen bg-ceres-black pt-32 pb-24">
+    <div className="min-h-screen bg-ceres-black pt-28 md:pt-32 pb-16 md:pb-24">
       <div className="container-narrow">
         
         <Link href="/news" className="inline-flex items-center gap-2 text-text-secondary hover:text-white mb-10 transition-colors text-sm font-medium">
@@ -28,7 +28,7 @@ export default async function ArticlePage(props: { params: Promise<{ slug: strin
 
         {/* Header */}
         <header className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="px-3 py-1 bg-ceres-blue/10 border border-ceres-blue/30 rounded-full text-xs font-mono font-bold text-ceres-blue uppercase tracking-wider">
               {article.category.replace('-', ' ')}
             </span>
@@ -41,11 +41,11 @@ export default async function ArticlePage(props: { params: Promise<{ slug: strin
             {article.title}
           </h1>
 
-          <p className="text-xl text-text-secondary font-medium mb-8 leading-relaxed">
+          <p className="text-base md:text-xl text-text-secondary font-medium mb-8 leading-relaxed">
             {article.excerpt}
           </p>
 
-          <div className="flex items-center justify-between py-6 border-y border-ceres-border">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 py-6 border-y border-ceres-border">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-ceres-border overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${article.author.avatar})`}} />
               <div>
@@ -67,7 +67,7 @@ export default async function ArticlePage(props: { params: Promise<{ slug: strin
         </header>
 
         {/* Hero Image */}
-        <div className="aspect-[21/9] w-full rounded-2xl overflow-hidden mb-16 relative">
+        <div className="aspect-[16/10] sm:aspect-[21/9] w-full rounded-2xl overflow-hidden mb-12 md:mb-16 relative">
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('${article.coverImage}')` }}
