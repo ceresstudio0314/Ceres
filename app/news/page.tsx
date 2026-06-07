@@ -87,7 +87,10 @@ function NewsContent() {
 
                     <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-4 mt-auto pt-8 border-t border-ceres-border">
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-ceres-border overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${featuredArticle.author.avatar})`}} />
+                        <div
+                          className="w-10 h-10 rounded-full border border-ceres-border bg-ceres-black bg-cover bg-center overflow-hidden"
+                          style={{ backgroundImage: `url(${featuredArticle.author.avatar})`}}
+                        />
                         <div>
                           <p className="text-sm font-semibold text-white">{featuredArticle.author.name}</p>
                           <p className="text-xs text-text-muted font-mono uppercase flex items-center gap-2">
@@ -175,7 +178,10 @@ function NewsContent() {
 
                       <div className="mt-auto pt-4 border-t border-ceres-border flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-ceres-border overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${article.author.avatar})`}} />
+                          <div
+                            className="w-8 h-8 rounded-full border border-ceres-border bg-ceres-black bg-cover bg-center overflow-hidden"
+                            style={{ backgroundImage: `url(${article.author.avatar})`}}
+                          />
                           <div className="text-xs font-mono text-text-muted">
                             <span className="text-white font-sans font-semibold block">{article.author.name}</span>
                             {formatDate(article.publishedAt)}

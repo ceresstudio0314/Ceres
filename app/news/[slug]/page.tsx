@@ -47,7 +47,10 @@ export default async function ArticlePage(props: { params: Promise<{ slug: strin
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 py-6 border-y border-ceres-border">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-ceres-border overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${article.author.avatar})`}} />
+              <div
+                className="w-12 h-12 rounded-full border border-ceres-border bg-ceres-black bg-cover bg-center shadow-blue-glow overflow-hidden"
+                style={{ backgroundImage: `url(${article.author.avatar})`}}
+              />
               <div>
                 <p className="text-sm font-semibold text-white">{article.author.name}</p>
                 <p className="text-xs text-text-muted font-mono uppercase">{article.author.role} • {formatDate(article.publishedAt)}</p>
