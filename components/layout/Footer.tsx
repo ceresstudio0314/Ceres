@@ -23,7 +23,7 @@ export function Footer() {
               Forged in Darkness. Built for Legends. We are an independent AAA game development studio crafting cinematic, story-driven experiences across PC and consoles.
             </p>
             <div className="flex items-center gap-4">
-              <SocialLink href="https://x.com/theceresstudio" icon={Twitter} label="Twitter" />
+              <SocialLink href="https://twitter.com/theceresstudio" icon={Twitter} label="X / Twitter" />
               <SocialLink href="https://www.instagram.com/theceres.studio?igsh=Z3l2NmhhMXZ5M2pj&utm_source=qr" icon={Instagram} label="Instagram" />
             </div>
           </div>
