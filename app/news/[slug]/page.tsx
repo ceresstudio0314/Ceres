@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Clock, Share2, Twitter, Linkedin, Facebook } from 'lucide-react'
+import { ArrowLeft, Clock } from 'lucide-react'
 import { getArticleBySlug, newsArticles } from '@/lib/data/news'
 import { formatDate } from '@/lib/utils'
 
@@ -55,16 +55,6 @@ export default async function ArticlePage(props: { params: Promise<{ slug: strin
                 <p className="text-sm font-semibold text-white">{article.author.name}</p>
                 <p className="text-xs text-text-muted font-mono uppercase">{article.author.role} • {formatDate(article.publishedAt)}</p>
               </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-text-muted font-mono uppercase mr-2 hidden sm:block">Share</span>
-              <button className="w-8 h-8 rounded-full border border-ceres-border flex items-center justify-center text-text-secondary hover:text-white hover:border-white transition-colors">
-                <Twitter className="w-3.5 h-3.5" />
-              </button>
-              <button className="w-8 h-8 rounded-full border border-ceres-border flex items-center justify-center text-text-secondary hover:text-white hover:border-white transition-colors">
-                <Linkedin className="w-3.5 h-3.5" />
-              </button>
             </div>
           </div>
         </header>
