@@ -47,26 +47,18 @@ export function FeaturedGames() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[480px]">
               {/* Left: Visual panel */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-ceres-blue/10 via-ceres-black to-ceres-black min-h-[300px] lg:min-h-auto flex items-center justify-center">
-                {/* Animated grid pattern */}
+              <div className="relative overflow-hidden bg-ceres-black min-h-[360px] lg:min-h-auto">
                 <div
-                  className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(99,179,237,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(99,179,237,0.4) 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px',
-                  }}
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('${game.coverImage}')` }}
                 />
-                {/* Center icon */}
-                <div className="relative z-10 flex flex-col items-center gap-4 p-10 text-center">
-                  <div className="w-24 h-24 rounded-2xl bg-ceres-blue/10 border-2 border-ceres-blue/30 flex items-center justify-center group-hover:border-ceres-blue/60 transition-colors duration-500">
-                    <svg className="w-12 h-12 text-ceres-blue/70" fill="none" viewBox="0 0 48 48" stroke="currentColor" strokeWidth={1.5}>
-                      <rect x="4" y="12" width="40" height="28" rx="3" />
-                      <path d="M16 12V8a2 2 0 012-2h12a2 2 0 012 2v4" />
-                      <circle cx="18" cy="26" r="3" />
-                      <path d="M28 23h6M28 29h4" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <p className="text-text-muted font-mono text-xs uppercase tracking-widest">Reveal Coming Soon</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-ceres-black/70 via-ceres-black/10 to-ceres-black/15" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-ceres-black/20" />
+                <div className="absolute inset-0 bg-noise opacity-10 mix-blend-overlay" />
+                <div className="absolute bottom-5 left-5 right-5 z-10">
+                  <span className="inline-flex rounded-full border border-ceres-blue/30 bg-ceres-black/60 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest text-ceres-blue backdrop-blur-md">
+                    Upcoming 2D Game
+                  </span>
                 </div>
 
                 {/* Bottom gradient fade */}
