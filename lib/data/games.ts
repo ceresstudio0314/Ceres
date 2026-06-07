@@ -37,7 +37,7 @@ export const games: Game[] = [
     releaseDate: 'TBA',
     status: 'coming-soon',
     rating: 0,
-    coverImage: '/images/upcoming-2d-game-icon.png',
+    coverImage: '/images/zoo-upcoming-2d-game.png',
     heroImage: '',
     screenshots: [],
     trailerUrl: '',

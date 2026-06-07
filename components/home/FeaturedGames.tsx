@@ -48,9 +48,10 @@ export function FeaturedGames() {
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[480px]">
               {/* Left: Visual panel */}
               <div className="relative overflow-hidden bg-ceres-black min-h-[360px] lg:min-h-auto">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url('${game.coverImage}')` }}
+                <img
+                  src={game.coverImage}
+                  alt={`${game.title} artwork`}
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ceres-black/70 via-ceres-black/10 to-ceres-black/15" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-ceres-black/20" />
