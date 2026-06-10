@@ -25,10 +25,10 @@ export interface Game {
 export const games: Game[] = [
   {
     id: '1',
-    slug: 'untitled-2d-game',
-    title: 'Monkey Rush',
+    slug: 'monkey-skate-escape',
+    title: 'Monkey Skate Escape',
     tagline: 'Our first adventure — coming soon.',
-    description: 'Monkey Rush is a handcrafted 2D game currently in development at Ceresstudio. Details coming soon.',
+    description: 'Monkey Skate Escape is a handcrafted 2D game currently in development at Ceresstudio. Details coming soon.',
     longDescription: `Our debut 2D title is currently in active development. 
     Stay tuned for more details, screenshots, and an official reveal. 
     This is our first project and we're pouring everything into it.`,

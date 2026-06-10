@@ -21,16 +21,16 @@ export interface NewsArticle {
 export const newsArticles: NewsArticle[] = [
   {
     id: '5',
-    slug: 'monkey-rush-under-development',
-    title: 'Monkey Rush Is Under Development',
-    excerpt: 'Monkey Rush, our upcoming 2D game, is currently in development at Ceres Studios. The first adventure is taking shape.',
-    content: `Monkey Rush is officially under development at Ceres Studios.
+    slug: 'monkey-skate-escape-under-development',
+    title: 'Monkey Skate Escape Is Under Development',
+    excerpt: 'Monkey Skate Escape, our upcoming 2D game, is currently in development at Ceres Studios. The first adventure is taking shape.',
+    content: `Monkey Skate Escape is officially under development at Ceres Studios.
 
 Our upcoming 2D game is being built as our first playable world: colorful, energetic, and crafted with care from the ground up.
 
 The game is still in development, so more details will be shared as the project grows. Right now, our focus is on shaping the core experience, polishing the feel of movement, and building a world that players can enjoy from the first moment.
 
-This is only the beginning for Monkey Rush.
+This is only the beginning for Monkey Skate Escape.
 
 Stay connected with Ceres Studios for future development updates, artwork, gameplay progress, and reveal news.`,
     category: 'update',
@@ -42,9 +42,9 @@ Stay connected with Ceres Studios for future development updates, artwork, gamep
     publishedAt: '2026-06-07',
     readTime: 2,
     coverImage: '/images/zoo-upcoming-2d-game.png',
-    tags: ['Monkey Rush', '2D Game', 'In Development', 'Upcoming Game'],
+    tags: ['Monkey Skate Escape', '2D Game', 'In Development', 'Upcoming Game'],
     featured: true,
-    gameRef: 'untitled-2d-game',
+    gameRef: 'monkey-skate-escape',
   },
   {
     id: '1',
@@ -109,7 +109,7 @@ The reveal is coming.`,
     coverImage: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop',
     tags: ['2D Game', 'Dev Diary', 'First Project', 'In Development'],
     featured: false,
-    gameRef: 'untitled-2d-game',
+    gameRef: 'monkey-skate-escape',
   },
   {
     id: '4',
